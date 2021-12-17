@@ -14,16 +14,125 @@
 
     <div id="container">
         <header id="header">
-            <a class="head-links" href="about-us">About us</a>
-            <a class="head-links" href="what-we-do">What we do</a>
-            <a class="head-links" href="contact-us">Contact us</a>
+            <a class="head-links" href="#box2">About us</a>
+            <a class="head-links" href="#box3">What we do</a>
+            <a class="head-links" href="#box4">Contact us</a>
         </header>
-
+        
         <div id="box1">
-            <a id="amy-page" href="amy-page"><img src="../Lightowlers/img/amy.png"></a>
+            <a id="amy-page" href="https://www.linkedin.com/in/amylightowlers/"><img class="head-shot" src="../Lightowlers/img/amy.png"></a>
             <h1>Lightowlers Productions</h1>
-            <a id="abbie-page" href="abbie-page"><img src="../Lightowlers/img/abbie.png"></a>
+            <a id="abbie-page" href="https://www.linkedin.com/in/abbie-lightowlers/"><img class="head-shot" src="../Lightowlers/img/abbie.png"></a>
         </div>
+        
+        <div id="box2">
+            <h3 class="h3">About us</h3>
+            <p class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita omnis officiis sequi voluptatum cum aut dolorum fugit sit, nulla accusantium consectetur natus minima ut, illo magnam ex. Voluptatum, sapiente exercitationem?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam similique inventore vitae vero porro id beatae laudantium perferendis eveniet ex, odit dolorem nobis soluta commodi optio earum eligendi blanditiis neque.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, rerum quod possimus inventore veritatis tempore soluta labore quia totam iure? Inventore placeat ipsum impedit tempora numquam? Natus, beatae. Voluptate, maxime?
+            </p>
+        </div>
+
+        <div id=box3>
+            <div class="h3">What we do</div>
+
+            <div class="slideshow-container">
+
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 3</div>
+                    <img class="slide" src="../Lightowlers/img/sunrise.jpg" alt="A sunrise">
+                </div>
+            
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 3</div>
+                    <img class="slide" src="../Lightowlers/img/sunset.jpeg" alt="A sunset">
+                </div>
+            
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 3</div>
+                    <img class="slide" src="../Lightowlers/img/the-great-valley.jpeg" alt="The great valley">
+                </div>
+              
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                <br>
+            </div>
+
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+
+            <script>
+            
+                let slideIndex = 1;
+                showSlides(slideIndex);
+
+                function plusSlides(n) {
+                    showSlides(slideIndex += n);
+                }
+
+                function currentSlide(n) {
+                    showSlides(slideIndex = n);
+                }
+
+                function showSlides(n) {
+                    let i;
+                    let slides = document.getElementsByClassName("mySlides");
+                    let dots = document.getElementsByClassName("dot");
+                    if (n > slides.length) {slideIndex = 1}
+                    if (n < 1) {slideIndex = slides.length}
+                    for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+
+                slides[slideIndex-1].style.display = "block";
+                    dots[slideIndex-1].className += " active";
+                }
+
+                    /*
+                    let slideIndex = 0;
+                    showSlides();
+
+                    function showSlides() {
+                    let i;
+                    let slides = document.getElementsByClassName("mySlides");
+                    for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                    }
+
+                    slideIndex++;
+                    if (slideIndex > slides.length) {slideIndex = 1}
+                    slides[slideIndex-1].style.display = "block";
+                    setTimeout(showSlides, 2000); // Change image every 2 seconds
+                    }
+                    */
+            </script>
+
+            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, sit odio adipisci quis eius dignissimos necessitatibus, fugit inventore fuga, dicta est? Sint nobis ullam aut ducimus vero possimus iusto repudiandae.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi modi natus itaque quidem odit atque sit nihil placeat. Nemo fuga at doloremque aliquid ducimus libero atque inventore modi rerum. Unde.
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam ad sit, quia obcaecati incidunt quis tempora pariatur mollitia in atque eum, similique temporibus deleniti, quibusdam voluptate ipsa et nesciunt omnis.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit voluptate animi neque laborum. Cumque inventore eligendi libero quibusdam eaque ipsum, tempore ea dolorem nulla voluptate blanditiis animi porro quia eius.
+            </p>
+        </div>
+
+        
+        <footer id=box4>
+            <h3 class="h3">Contact us</h3>
+            <p class="text">If you would like more information about us or the work we do then please click on our <a href="#header">headshots</a> above to find our linkedin pages or feel free to contact us directly.</p>
+            <div id=info>
+                <ul class="text">
+                    <li class="text">Emial: amy@email.com ~ Phone: +34 000 00 00 00</li>
+                    <li class="text">Email: abbie@email.com ~ Phone: +34 000 00 00 00</li>
+                </ul>
+            </div>
+        </footer>
+
     </div>
 
 </body>
